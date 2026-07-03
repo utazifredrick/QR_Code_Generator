@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QR Code Generator</title>
+    <meta
+      name="description"
+      content="Generate beautiful QR codes for URLs or text with a polished glassmorphism interface."
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsqr/1.1.0/jsQR.min.js"></script>
+  </head>
+  <body>
+    <div class="background-orb orb-one"></div>
+    <div class="background-orb orb-two"></div>
+
+    <main class="app-shell">
+      <section class="app-card" aria-labelledby="app-title">
+        <header class="app-header">
+          <div>
+            <p class="eyebrow">Modern toolkit</p>
+            <h1 id="app-title">QR Code Generator</h1>
+            <p class="subtitle">
+              Create polished QR codes for URLs or any text in seconds.
+            </p>
+          </div>
+          <button
+            id="themeToggle"
+            class="icon-button"
+            type="button"
+            aria-label="Toggle color theme"
+          >
+            <span class="icon" aria-hidden="true">☀️</span>
+          </button>
+        </header>
+
+        <form class="generator-form" id="generatorForm">
+          <div class="field-group">
+            <label for="textInput">Text or URL</label>
+            <textarea
+              id="textInput"
+              rows="3"
+              placeholder="Enter a URL or any text"
+            ></textarea>
+            <div class="helper-row">
+              <span id="charCounter" class="counter">0 characters</span>
+              <button id="demoBtn" class="text-button" type="button">
+                Random demo URL
+              </button>
+            </div>
+          </div>
+
+          <div class="field-group upload-group">
+            <label>Or paste an image of a QR code</label>
+            <div class="upload-actions">
+              <input
+                id="imageInput"
+                class="sr-only"
+                type="file"
+                accept="image/*"
+              />
+              <button id="imageUploadBtn" class="secondary-btn" type="button">
+                Upload image
+              </button>
+              <div
+                id="imageDropZone"
+                class="drop-zone"
+                role="button"
+                tabindex="0"
+                aria-label="Drop an image of a QR code here"
+              >
+                Drop image here or paste it
+              </div>
+            </div>
+            <span class="upload-hint">
+              You can also paste an image directly anywhere on the page.
+            </span>
+          </div>
+
+          <div class="controls-grid">
+            <div class="field-group">
+              <label for="sizeSelect">QR size</label>
+              <select id="sizeSelect">
+                <option value="150">150px</option>
+                <option value="200">200px</option>
+                <option value="250" selected>250px</option>
+                <option value="300">300px</option>
+                <option value="400">400px</option>
+              </select>
+            </div>
+
+            <div class="field-group">
+              <label for="foregroundColor">Foreground</label>
+              <input id="foregroundColor" type="color" value="#1d4ed8" />
+            </div>
+
+            <div class="field-group">
+              <label for="backgroundColor">Background</label>
+              <input id="backgroundColor" type="color" value="#ffffff" />
+            </div>
+          </div>
+
+          <div class="actions-grid">
+            <button id="generateBtn" class="primary-btn" type="button">
+              Generate QR Code
+            </button>
+            <button
+              id="downloadBtn"
+              class="secondary-btn"
+              type="button"
+              disabled
+            >
+              Download PNG
+            </button>
+            <button id="copyBtn" class="secondary-btn" type="button">
+              Copy Text
+            </button>
+            <button id="clearBtn" class="ghost-btn" type="button">Clear</button>
+          </div>
+        </form>
+
+        <section class="qr-panel" aria-live="polite">
+          <div
+            id="qrContainer"
+            class="qr-placeholder"
+            role="img"
+            aria-label="Generated QR code preview"
+          ></div>
+          <p
+            id="statusMessage"
+            class="status-message"
+            role="status"
+            aria-live="polite"
+          >
+            Ready to create a QR code.
+          </p>
+          <button
+            id="generateAnotherBtn"
+            class="secondary-btn hidden"
+            type="button"
+          >
+            Generate Another
+          </button>
+        </section>
+
+        <section class="history-panel" aria-labelledby="historyTitle">
+          <div class="history-header">
+            <h2 id="historyTitle">Recent history</h2>
+            <button id="clearHistoryBtn" class="text-button" type="button">
+              Clear
+            </button>
+          </div>
+          <ul id="historyList" class="history-list"></ul>
+        </section>
+      </section>
+    </main>
+
+    <footer class="app-footer">Built with HTML, CSS & JavaScript</footer>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

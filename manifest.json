@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "QR Code Generator",
+  "version": "1.0.0",
+  "description": "Generate QR codes for URLs, text, or scanned QR images from a polished popup interface.",
+  "action": {
+    "default_title": "QR Code Generator",
+    "default_popup": "index.html"
+  },
+  "permissions": ["storage"],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; object-src 'self'"
+  }
+}
