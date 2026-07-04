@@ -1,0 +1,108 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Inter", sans-serif;
+  background: #f4f6fb;
+  color: #111827;
+}
+
+.app {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 24px;
+  align-items: center;
+  padding: 32px;
+}
+
+.card,
+.preview {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+.card {
+  padding: 28px;
+}
+
+h1 {
+  margin: 0 0 8px;
+  font-size: 1.8rem;
+}
+
+p {
+  margin: 0 0 20px;
+  color: #6b7280;
+}
+
+form {
+  display: grid;
+  gap: 14px;
+}
+
+.field {
+  display: grid;
+  gap: 6px;
+}
+
+.field span {
+  font-weight: 600;
+  color: #374151;
+}
+
+input,
+select,
+button {
+  font: inherit;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  outline: none;
+}
+
+button {
+  padding: 12px 16px;
+  border: none;
+  border-radius: 10px;
+  background: #2563eb;
+  color: white;
+  cursor: pointer;
+}
+
+.preview {
+  display: grid;
+  place-items: center;
+  min-height: 320px;
+  padding: 24px;
+}
+
+.qr-pattern {
+  width: 140px;
+  height: 140px;
+  background: #111827;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect x='0' y='0' width='100' height='100' rx='8' fill='black'/%3E%3Crect x='16' y='16' width='28' height='28' rx='4' fill='white'/%3E%3Crect x='56' y='16' width='28' height='28' rx='4' fill='white'/%3E%3Crect x='16' y='56' width='28' height='28' rx='4' fill='white'/%3E%3Crect x='56' y='56' width='28' height='28' rx='4' fill='white'/%3E%3Ccircle cx='72' cy='72' r='8' fill='white'/%3E%3C/svg%3E")
+    center/contain no-repeat;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect x='0' y='0' width='100' height='100' rx='8' fill='black'/%3E%3Crect x='16' y='16' width='28' height='28' rx='4' fill='white'/%3E%3Crect x='56' y='16' width='28' height='28' rx='4' fill='white'/%3E%3Crect x='16' y='56' width='28' height='28' rx='4' fill='white'/%3E%3Crect x='56' y='56' width='28' height='28' rx='4' fill='white'/%3E%3Ccircle cx='72' cy='72' r='8' fill='white'/%3E%3C/svg%3E")
+    center/contain no-repeat;
+}
+
+@media (max-width: 760px) {
+  .app {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+  .preview {
+    min-height: 240px;
+  }
+}

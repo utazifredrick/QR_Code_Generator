@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QR Code Generator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <main class="app">
+      <section class="card">
+        <h1>QR Code Generator</h1>
+        <p>Enter a link or text to generate your QR code.</p>
+
+        <form>
+          <label class="field">
+            <span>Content</span>
+            <input type="text" placeholder="https://example.com" />
+          </label>
+
+          <label class="field">
+            <span>Size</span>
+            <select>
+              <option>100 × 100</option>
+              <option selected>200 × 200</option>
+              <option>300 × 300</option>
+            </select>
+          </label>
+
+          <button type="submit">Create QR Code</button>
+        </form>
+      </section>
+
+      <aside class="preview" aria-label="QR code preview">
+        <div class="qr-pattern"></div>
+      </aside>
+    </main>
+  </body>
+</html>
